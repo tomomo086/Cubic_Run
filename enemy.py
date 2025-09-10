@@ -9,16 +9,33 @@ class Enemy(pygame.sprite.Sprite):
     def __init__(self, x: int, y: int, speed: float, image_path: str, walk_range_start: int, walk_range_end: int):
         super().__init__()
         
-        # 色付き四角形で敵を描画（画像が透明の場合の対策）
+        # 警備員らしいグラフィックで描画
         self.image = pygame.Surface((TILE_SIZE, TILE_SIZE))
+        self.image.fill((0, 0, 0, 0))  # 透明背景
+        
         if 'enemy_t' in image_path.lower():
-            self.image.fill((255, 0, 0))  # 敵Tは赤色
+            # 細い警備員T（黒い制服）
+            pygame.draw.rect(self.image, (50, 50, 50), (10, 5, 20, 35))  # 体
+            pygame.draw.circle(self.image, (255, 220, 177), (20, 10), 6)  # 頭
+            pygame.draw.rect(self.image, (255, 255, 255), (12, 15, 16, 8))  # シャツ
+            pygame.draw.rect(self.image, (0, 0, 255), (14, 17, 12, 4))  # ネクタイ（青）
         elif 'enemy_h' in image_path.lower():
-            self.image.fill((255, 165, 0))  # 敵Hはオレンジ色  
+            # ずんぐり警備員H（グレー制服）
+            pygame.draw.rect(self.image, (100, 100, 100), (8, 5, 24, 35))  # 体
+            pygame.draw.circle(self.image, (255, 220, 177), (20, 10), 7)  # 頭
+            pygame.draw.rect(self.image, (255, 255, 255), (10, 15, 20, 10))  # シャツ
+            pygame.draw.rect(self.image, (255, 0, 0), (15, 18, 10, 4))  # ネクタイ（赤）
         elif 'boss' in image_path.lower():
-            self.image.fill((139, 0, 139))  # 社長は紫色
+            # 社長（高級スーツ）
+            pygame.draw.rect(self.image, (20, 20, 60), (10, 5, 20, 35))  # ダークスーツ
+            pygame.draw.circle(self.image, (255, 220, 177), (20, 10), 6)  # 頭
+            pygame.draw.rect(self.image, (255, 255, 255), (12, 15, 16, 8))  # 高級シャツ
+            pygame.draw.rect(self.image, (255, 215, 0), (14, 17, 12, 4))  # ゴールドタイ
         else:
-            self.image.fill((255, 0, 0))  # デフォルトは赤色
+            # デフォルト警備員
+            pygame.draw.rect(self.image, (50, 50, 50), (10, 5, 20, 35))  # 体
+            pygame.draw.circle(self.image, (255, 220, 177), (20, 10), 6)  # 頭
+        
         self.original_image = self.image.copy()  # 元の画像を保存
         
         # Rectオブジェクト

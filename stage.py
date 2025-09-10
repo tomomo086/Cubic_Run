@@ -67,10 +67,14 @@ class Stage:
                     # 地面/ブロックを茶色で描画
                     pygame.draw.rect(screen, BROWN, (x, y, TILE_SIZE, TILE_SIZE))
                 elif tile == 'G' and self.goal_rect:
-                    # ゴールを明るい黄色で描画（目立つように）
-                    pygame.draw.rect(screen, (255, 255, 0), (x, y, TILE_SIZE, TILE_SIZE))
-                    # 赤い枠線を追加してさらに目立たせる
-                    pygame.draw.rect(screen, (255, 0, 0), (x, y, TILE_SIZE, TILE_SIZE), 3)
+                    # 会社の金庫らしいゴール
+                    pygame.draw.rect(screen, (192, 192, 192), (x, y, TILE_SIZE, TILE_SIZE))  # シルバー金庫
+                    pygame.draw.rect(screen, (105, 105, 105), (x, y, TILE_SIZE, TILE_SIZE), 4)  # 濃いグレー枠
+                    # 金庫のダイヤル
+                    pygame.draw.circle(screen, (255, 215, 0), (x+TILE_SIZE//2, y+TILE_SIZE//2), 8)  # ゴールドダイヤル
+                    pygame.draw.circle(screen, (0, 0, 0), (x+TILE_SIZE//2, y+TILE_SIZE//2), 6, 2)  # 黒い目盛り
+                    # 金庫のハンドル
+                    pygame.draw.rect(screen, (255, 215, 0), (x+TILE_SIZE//2-2, y+TILE_SIZE//2+10, 4, 6))  # ハンドル
     
     def get_platforms(self) -> list[pygame.Rect]:
         """プラットフォームのリストを取得"""
