@@ -34,7 +34,7 @@ def draw_title_screen(screen: pygame.Surface):
     
     # ゲームタイトル
     title_text_y = SCREEN_HEIGHT // 2 - 50  # 画面中央より少し上に配置
-    draw_text(screen, "SECURITY RUN", title_font, WHITE, SCREEN_WIDTH // 2, title_text_y, center=True)
+    draw_text(screen, "CUBIC RUN", title_font, WHITE, SCREEN_WIDTH // 2, title_text_y, center=True)
     
     # 開始メッセージ
     message_text_y = SCREEN_HEIGHT // 2 + 50  # 画面中央より少し下に配置
