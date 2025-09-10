@@ -240,9 +240,9 @@ class EnemyT:
 
 このCubic_Run開発で、**Hybrid AI Coderシステムの75.6%トークン削減効果**が実証されました：
 
-![コンテキスト節約効果分析1](../Hybrid_AI_Coder/images/スクリーンショット%202025-09-10%20154629.png)
+![コンテキスト節約効果分析1](images/context_analysis_1.png)
 
-![コンテキスト節約効果分析2](../Hybrid_AI_Coder/images/スクリーンショット%202025-09-10%20155013.png)
+![コンテキスト節約効果分析2](images/context_analysis_2.png)
 
 **ClaudeCodeによる分析結果：**
 - **従来方式（LLM単独）**: 約23,350トークン
