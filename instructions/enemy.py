@@ -36,8 +36,7 @@
 #                 *   `self.direction = 1`
 #                 *   `self.image = pygame.transform.flip(self.original_image, False, False)` # 画像を元に戻す
 
-#     *   **`draw(self, screen: pygame.Surface):`**
-#         *   `screen.blit(self.image, self.rect)` # 敵を画面に描画
+# 注意: drawメソッドは不要です。pygame.sprite.Groupの標準描画機能を使用します。
 
 # 3. 特定の敵キャラクタークラスの定義:
 #     *   `Enemy` クラスを継承して、以下の3つのクラスを定義する。
@@ -62,4 +61,4 @@
 # *   敵の画像ファイルは、`config.py` で定義されたパス（例: `assets/enemy_t.png`）に存在することを前提とする。SLMは、これらのパスが有効であることを前提にコードを生成する。
 # *   `walk_range_start` と `walk_range_end` は、敵が往復するX座標の範囲を定義する。これらの値は、ステージの設計に応じて適切に設定される必要がある。
 # *   `President` は最終ボスであるため、他の敵とは異なる特別な挙動（例: 攻撃、体力、倒し方）を持つ可能性があるが、現時点ではシンプルな左右往復移動で実装し、必要に応じて後で拡張する。
-# *   敵の描画は `draw` メソッドで行い、`main.py` から呼び出されることを想定する。`pygame.sprite.Group` を使用して敵を管理する場合、グループの `draw()` メソッドが各Spriteの `draw()` メソッドを自動的に呼び出す。
+# *   敵の描画は `pygame.sprite.Group` の標準 `draw()` メソッドを使用します。各敵スプライトに `image` と `rect` 属性があれば自動的に描画されます。main.py では `enemies.draw(screen)` を呼び出すだけです。

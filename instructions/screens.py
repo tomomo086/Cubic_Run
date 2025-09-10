@@ -9,14 +9,17 @@
 #     *   `import pygame`
 #     *   `from config import *` # config.pyから必要な定数をインポート（例: `SCREEN_WIDTH`, `SCREEN_HEIGHT`, `WHITE`, `BLACK`, `RED`, `GREEN`, `FONT_PATH` など）
 
-# 2. フォントの初期化と設定:
-#     *   `pygame.font.init()` # Pygameのフォントモジュールを初期化する。これは一度だけ呼び出す必要がある。
-#     *   **メインタイトル用フォント:**
-#         *   `title_font_size: int = 74`
-#         *   `title_font = pygame.font.Font(FONT_PATH, title_font_size)` # FONT_PATHがNoneの場合はPygameのデフォルトフォントを使用
-#     *   **メッセージ用フォント:**
-#         *   `message_font_size: int = 36`
-#         *   `message_font = pygame.font.Font(FONT_PATH, message_font_size)` # FONT_PATHがNoneの場合はPygameのデフォルトフォントを使用
+# 2. フォント設定（グローバル変数として宣言、遅延初期化）:
+#     *   `title_font = None`
+#     *   `message_font = None`
+#     *   
+#     *   `def initialize_fonts():`
+#         *   `global title_font, message_font`
+#         *   `if title_font is None:`  # まだ初期化されていない場合のみ実行
+#             *   `title_font_size: int = 74`
+#             *   `title_font = pygame.font.Font(FONT_PATH, title_font_size)`
+#             *   `message_font_size: int = 36`
+#             *   `message_font = pygame.font.Font(FONT_PATH, message_font_size)`
 
 # 3. テキスト描画のヘルパー関数 (`draw_text`):
 #     *   `def draw_text(screen: pygame.Surface, text: str, font: pygame.font.Font, color: tuple[int, int, int], x: int, y: int, center: bool = False, antialias: bool = True):`
@@ -30,6 +33,7 @@
 
 # 4. タイトル画面の描画関数 (`draw_title_screen`):
 #     *   `def draw_title_screen(screen: pygame.Surface):`
+#         *   `initialize_fonts()`  # フォントが初期化されていることを確認
 #         *   `screen.fill(BLACK)` # 画面全体を黒で塗りつぶす
 #         *   **ゲームタイトル:**
 #             *   `title_text_y = SCREEN_HEIGHT // 2 - 50` # 画面中央より少し上に配置
@@ -40,6 +44,7 @@
 
 # 5. ゲームオーバー画面の描画関数 (`draw_game_over_screen`):
 #     *   `def draw_game_over_screen(screen: pygame.Surface):`
+#         *   `initialize_fonts()`  # フォントが初期化されていることを確認
 #         *   `screen.fill(BLACK)` # 画面全体を黒で塗りつぶす
 #         *   **「GAME OVER」メッセージ:**
 #             *   `game_over_text_y = SCREEN_HEIGHT // 2 - 50`
@@ -50,6 +55,7 @@
 
 # 6. ゲームクリア画面の描画関数 (`draw_game_clear_screen`):
 #     *   `def draw_game_clear_screen(screen: pygame.Surface):`
+#         *   `initialize_fonts()`  # フォントが初期化されていることを確認
 #         *   `screen.fill(BLACK)` # 画面全体を黒で塗りつぶす
 #         *   **「GAME CLEAR!」メッセージ:**
 #             *   `game_clear_text_y = SCREEN_HEIGHT // 2 - 50`

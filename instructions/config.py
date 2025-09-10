@@ -32,7 +32,8 @@
 # 5. ステージ設定 (Stage Configuration):
 #     *   ステージの構成要素（タイルサイズ、穴の判定など）に関する定数を定義します。
 #     *   `TILE_SIZE: int = 40` # ステージのタイルのサイズ（ピクセル単位）
-#     *   `HOLE_FALL_Y: int = SCREEN_HEIGHT + 50` # プレイヤーが穴に落ちたと判定されるY座標の閾値（画面外の少し下）
+#     *   # 注意: HOLE_FALL_Yは画面設定の後に定義する必要があります
+#     *   # `HOLE_FALL_Y: int = 650` # プレイヤーが穴に落ちたと判定されるY座標の閾値（画面下部 + マージン）
 
 # 6. 色定義 (Color Definitions - RGB Tuples):
 #     *   Pygameで使用する標準的な色のRGB値をタプルとして定義します。
@@ -58,6 +59,10 @@
 #     *   `BOSS_IMAGE_PATH: str = "assets/boss.png"` # 社長画像のファイルパス
 #     *   `ITEM_IMAGE_PATH: str = "assets/item.png"` # アイテム画像のファイルパス
 #     *   `FONT_PATH: str | None = None` # 使用するフォントのファイルパス（NoneでPygameのデフォルトフォント）
+
+# 9. 追加のステージ設定 (Additional Stage Configuration):
+#     *   画面設定に依存する定数をここで定義します。
+#     *   `HOLE_FALL_Y: int = 650` # プレイヤーが穴に落ちたと判定されるY座標の閾値（SCREEN_HEIGHT + 50相当）
 
 # 考慮事項:
 # *   これらの定数は、他のPythonファイルから `from config import *` のようにインポートして使用することを想定します。

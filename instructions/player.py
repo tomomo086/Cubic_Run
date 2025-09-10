@@ -42,9 +42,22 @@
 #                 *   `self.on_ground = False`
 
 #     *   **更新メソッド (`update` メソッド):
+#         *   `def update(self, platforms: list[pygame.Rect]):`
 #         *   **重力の適用:** `self.change_y += GRAVITY`
-#         *   **X座標の更新:** `self.rect.x += self.change_x`
+#         *   **X座標の更新と境界チェック:** 
+#             *   `self.rect.x += self.change_x`
+#             *   `if self.rect.left < 0: self.rect.left = 0`  # 左境界チェック
+#             *   `if self.rect.right > SCREEN_WIDTH: self.rect.right = SCREEN_WIDTH`  # 右境界チェック
 #         *   **Y座標の更新:** `self.rect.y += self.change_y`
+#         *   **プラットフォームとの衝突判定:**
+#             *   `self.on_ground = False`  # 最初に地面にいない状態にリセット
+#             *   `for platform in platforms:`
+#                 *   `if self.rect.colliderect(platform):`
+#                     *   # 上から落ちてきた場合（地面に着地）
+#                     *   `if self.change_y > 0:`  # 下向きに移動中
+#                         *   `self.rect.bottom = platform.top`
+#                         *   `self.change_y = 0`
+#                         *   `self.on_ground = True`
 #         *   **無敵タイマーの更新:**
 #             *   `if self.invincible_timer > 0:`
 #                 *   `self.invincible_timer -= 1`
