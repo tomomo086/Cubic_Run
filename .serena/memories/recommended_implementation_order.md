@@ -1,4 +1,4 @@
-# SecurityRun 推奨実装順序
+# Cubic_Run 推奨実装順序
 
 ## 最適なSLM選択
 **推奨モデル**: Qwen2.5 Coder 14B Instruct (Q4_K_M)

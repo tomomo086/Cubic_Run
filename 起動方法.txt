@@ -1,6 +1,6 @@
 Write(起動方法.txt)
   ⎿  Wrote 1 lines to 起動方法.txt
-     SecurityRun ゲーム起動方法
+     Cbic_Run ゲーム起動方法
      ============================
      起動方法：
      1. コマンドラインで python main.py を実行
