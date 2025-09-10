@@ -4,7 +4,7 @@
 # 1. 画面設定 (Screen Configuration)
 SCREEN_WIDTH: int = 1920  # ゲーム画面の幅（ピクセル単位）
 SCREEN_HEIGHT: int = 1080  # ゲーム画面の高さ（ピクセル単位）
-CAPTION: str = "Security Run"  # ゲームウィンドウのタイトル文字列
+CAPTION: str = "Cubic Run"  # ゲームウィンドウのタイトル文字列
 
 # 2. プレイヤー設定 (Player Configuration)
 PLAYER_SPEED: int = 5  # プレイヤーの水平移動速度（ピクセル/フレーム）

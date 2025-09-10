@@ -9,7 +9,7 @@
 #     *   ゲームウィンドウのサイズとタイトルを定義します。
 #     *   `SCREEN_WIDTH: int = 800`  # ゲーム画面の幅（ピクセル単位）
 #     *   `SCREEN_HEIGHT: int = 600` # ゲーム画面の高さ（ピクセル単位）
-#     *   `CAPTION: str = "Security Run"` # ゲームウィンドウのタイトル文字列
+#     *   `CAPTION: str = "Cubic Run"` # ゲームウィンドウのタイトル文字列
 
 # 2. プレイヤー設定 (Player Configuration):
 #     *   プレイヤーキャラクターの移動、ジャンプ、残機、無敵時間に関する定数を定義します。

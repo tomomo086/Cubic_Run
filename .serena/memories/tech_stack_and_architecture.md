@@ -25,7 +25,7 @@
 # 画面設定
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
-CAPTION = "Security Run"
+CAPTION = "Cubic Run"
 
 # プレイヤー設定
 PLAYER_SPEED = 5
