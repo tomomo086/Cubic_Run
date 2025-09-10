@@ -1,4 +1,17 @@
-# Cubic Run プロジェクト技術レジュメ
+# Cubic Run - AI協働開発ゲーム
+
+## 🎓 ポートフォリオ作品
+
+![Platform: Python | Pygame](https://img.shields.io/badge/Platform-Python%20%7C%20Pygame-green.svg)
+![Language: Python](https://img.shields.io/badge/Language-Python-orange.svg)
+![AI Development: Qwen2.5-Coder](https://img.shields.io/badge/AI%20Development-Qwen2.5--Coder-blue.svg)
+![Development Method: Hybrid AI Coder](https://img.shields.io/badge/Development%20Method-Hybrid%20AI%20Coder-red.svg)
+
+![Status: Portfolio](https://img.shields.io/badge/Status-Portfolio-purple.svg)
+
+Hybrid AI Coderシステムを使用してSLM（Qwen2.5-Coder）との協働で開発されたシンプルな2D横スクロールアクションゲーム
+
+> ⚠️ **注意**: これはポートフォリオ・学習目的の作品です。配布や商用利用は想定しておりません。
 
 ## 🎮 プロジェクト概要
 
@@ -316,11 +329,43 @@ python main.py
 - **Windows**: デスクトップ環境
 - **解像度**: 1920x1080推奨
 
+## 📄 ライセンス・利用について
+
+**ポートフォリオ・学習目的の作品**
+
+このプロジェクトは技術学習・ポートフォリオ展示のために制作されたものです。  
+ソースコード閲覧・技術参考は自由ですが、配布や商用利用は想定しておりません。
+
+## 🔧 開発環境・ツール
+
+このプロジェクトの開発には以下のツールを使用しました：
+
+- **AI支援開発**: Hybrid AI Coderシステム（LLM×SLM協働開発）
+- **統合開発環境**: VS Code, PyCharm
+- **SLM**: Qwen2.5-Coder
+- **AI支援機能**: コード生成・デバッグ・リファクタリング
+
 ---
 
-**プロジェクト完成日**: 2025年9月  
-**開発手法**: Hybrid AI Coderシステム（LLM×SLM協働開発）  
-**開発時間**: 約2時間  
-**核心価値**: AI協働開発システムの実用性実証  
-**ゲーム内容**: シンプルな2D横スクロールアクション  
-**実証効果**: 75.6%のコンテキスト削減達成
+## 📋 開発情報
+
+| 開発者 | tomomo086 + Claude4 |
+|--------|-------------------  |
+| 開発期間 | 2025年9月 |
+| バージョン | 1.0.0 |
+| 開発ツール | Claude4, ClaudeCode, Hybrid AI Coder |
+
+## 🔗 関連リンク
+
+- [tomomo086: Github](https://github.com/tomomo086)
+- [@mirai_sousiyo39: X](https://x.com/mirai_sousiyo39)
+
+---
+
+**作成者**: [tomomo086(@mirai_sousiyo39) + Claude4]  
+**最終更新**: 2025年9月10日
+
+🤖 **AI協働開発の実践例**
+
+このREADMEもClaude4、ClaudeCode、Hybrid AI CoderによるAI支援で作成されています。  
+本プロジェクトは、LLM×SLM協働開発の実証として制作した作品です。
