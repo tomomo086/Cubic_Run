@@ -44,14 +44,11 @@ Cubic Runは、**Hybrid AI Coderシステム**を使用してSLM（Qwen2.5-Coder
 - 敵踏みつけ攻撃
 
 **敵キャラクター**:
-- **四角T（細長）**: 高速移動
-- **四角H（ずんぐり）**: 低速移動  
-- **社長（ボス）**: 中速移動
 - 基本的なパトロール移動
 
 ### ✅ ゲーム要素
 - **ステージシステム**: タイルベースの地形構築
-- **ビジュアルアセット**: player.png, enemy_t.png, enemy_h.png, boss.png, item.png
+- **ビジュアルアセット**: player.png, enemy.png, item.png
 
 ### ✅ UI/画面システム
 - **タイトル画面**: ゲーム開始画面
@@ -116,9 +113,6 @@ TILE_SIZE = 40              # ステージタイルサイズ
 
 # キャラクター性能
 PLAYER_SPEED = 5             # プレイヤー移動速度
-ENEMY_SPEED_T = 3           # 四角T速度
-ENEMY_SPEED_H = 1           # 四角H速度
-BOSS_SPEED = 2.5            # 社長速度
 ```
 
 ## 📊 技術的成果
@@ -187,7 +181,7 @@ current_game_state = GAME_STATE_TITLE
 ### AI行動パターン
 ```python
 # 敵キャラクターのパトロール移動
-class EnemyT:
+class Enemy:
     def __init__(self, x, y, left_bound, right_bound):
         self.left_bound = left_bound    # 移動範囲左端
         self.right_bound = right_bound  # 移動範囲右端
@@ -282,9 +276,7 @@ Cubic_Run/
 ├── screens.py           # 画面描画システム
 ├── assets/              # ゲームアセット
 │   ├── player.png
-│   ├── enemy_t.png
-│   ├── enemy_h.png
-│   ├── boss.png
+│   ├── enemy.png
 └── 起動方法.txt         # 実行手順書
 ```
 
